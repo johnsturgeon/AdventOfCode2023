@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee0e4108-b4ab-47c6-8a0a-63e5ca4b4073" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/day01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day03.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/common_fixtures.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/data/day01.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/data/day01_p2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/data/day01_p2_sample.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/data/day01_sample.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/data/day02.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/data/day02_sample.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/data/day03.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/data/day03_sample.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/day01_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/day02_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/day03_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day03.py" beforeDir="false" afterPath="$PROJECT_DIR$/day03.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +173,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1703349638024</updated>
-      <workItem from="1703349639155" duration="24600000" />
+      <workItem from="1703349639155" duration="27453000" />
     </task>
     <servers />
   </component>
@@ -210,7 +195,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day03.py</url>
-          <line>62</line>
+          <line>82</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>

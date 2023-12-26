@@ -54,8 +54,28 @@ def find_number_in_line(line, start_index):
         return number, found_positions[0], found_positions[-1]
 
 
+def find_number_above_and_below_gear(number_list, gear_position) -> int:
+    # {
+    #     'number': number,
+    #     'start': start,
+    #     'end': end,
+    #     'row': row
+    # }
+    # gear position
+    # {
+    #     'start': start,
+    #     'end': end,
+    #     'row': row
+    # }
+
+    for number in number_list:
+
+
+
+
 def sum_of_part_numbers(input_list):
     part_number_sum: int = 0
+    part_number_sets: List[dict] = []
     for row, line in enumerate(input_list):
         line_position: int = 0
         while True:
@@ -68,9 +88,14 @@ def sum_of_part_numbers(input_list):
             current_line = current_row_has_symbol_near_part(input_list, row, start, end)
             if prev_line or next_line or current_line:
                 part_number_sum += number
-            else:
-                print("Bad Part")
+                part_number_sets.append({
+                    'number': number,
+                    'start': start,
+                    'end': end,
+                    'row': row
+                })
             line_position = end + 1
+
     return part_number_sum
 
 
