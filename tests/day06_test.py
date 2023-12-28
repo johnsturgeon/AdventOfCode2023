@@ -1,4 +1,4 @@
-import day05
+import day06
 from common_fixtures import sample_list, real_list, sample_list_p2, real_list_p2
 
 

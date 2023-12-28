@@ -4,7 +4,7 @@ import sys
 from typing import List, Optional, Tuple
 from dataclasses import dataclass
 
-os.environ["DAY"] = "05"
+os.environ["DAY"] = "06"
 
 
 class Source:
