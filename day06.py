@@ -2,143 +2,67 @@ from __future__ import annotations
 import os
 import sys
 from typing import List, Optional, Tuple
-from dataclasses import dataclass
-
+import math
 os.environ["DAY"] = "06"
 
 
-class Source:
-    def __init__(self, name=None):
-        self.name = name
-        self.destination: Optional[Source] = None
-        self._mappings = []
-
-    def add_range_map(self, source_begin: int, source_len: int, dest_delta: int):
-        range_begin: int = source_begin
-        range_end: int = source_begin + source_len
-        range_delta: int = dest_delta
-        self._mappings.append({
-            'begin': range_begin,
-            'end': range_end,
-            'delta': range_delta
-        })
-
-    def _find_mapping(self, location):
-        mapped_location: int = location
-        for mapping in self._mappings:
-            if mapping['begin'] <= location < mapping['end']:
-                mapped_location = location + mapping['delta']
-        return mapped_location
-
-    def get_mapped_location(self, location) -> int:
-        mapped_location: int = self._find_mapping(location)
-        if self.destination:
-            mapped_location = self.destination.get_mapped_location(mapped_location)
-        return mapped_location
-
-    def _find_mapping_ranges(self, r1s: List[range]) -> List[range]:
-        mapping_ranges: List[range] = []
-        for r1 in r1s:
-            if len(r1) == 0:
-                continue
-            for mapping in self._mappings:
-                d1: int = mapping['delta']
-                r2: range = range(mapping['begin'], mapping['end'])
-                # r3 is the intersected range
-                r3: range = range(
-                    max(r1[0], r2[0]),
-                    min(r1[-1], r2[-1]) + 1
-                )
-                if len(r3):
-                    # now subtract the intersected range from the original
-                    if r1[-1] == r3[-1]:
-                        r1 = range(r1[0], r1[-1] + 1 - len(r3))
-                    else:
-                        r1 = range(r1[0] + len(r3), r1[-1])
-
-                    # shift r3
-                    r3 = range(r3[0] + d1, r3[-1] + d1)
-                    mapping_ranges.append(r3)
-                if len(r1) == 0:
-                    break
-            if len(r1):
-                mapping_ranges.append(r1)
-                print(f"{self.name} appending r1 {r1}")
-        return mapping_ranges
-
-    def get_mapped_location_ranges(self, r1s: List[range]) -> List[range]:
-        mapped_ranges: List[range] = self._find_mapping_ranges(r1s)
-        if self.destination:
-            mapped_ranges = self.destination.get_mapped_location_ranges(mapped_ranges)
-        print(f"{self.name} has ranges {mapped_ranges}")
-        return mapped_ranges
+def get_distance_time_arrays(input_list) -> Tuple[List[int], List[int]]:
+    time_str = input_list[0].split()
+    distance_str = input_list[1].split()
+    time_ints = []
+    distance_ints = []
+    for time in time_str:
+        if time.isnumeric():
+            time_ints.append(int(time))
+    for distance in distance_str:
+        if distance.isnumeric():
+            distance_ints.append(int(distance))
+    return time_ints, distance_ints
 
 
-def get_seeds_and_linked_list(input_list) -> Tuple[List, Source]:
-    seeds: List[int] = []
-    head_source: Optional[Source] = None
-    previous_source: Optional[Source] = None
-    current_source: Optional[Source] = None
-    for line in input_list:
-        # first get the seeds and move on
-        if line.startswith("seeds:"):
-            _, seeds_str = line.split(': ')
-            seeds = seeds_str.split()
-            continue
-        if len(line) == 0:
-            continue
-        if line.find(':') != -1:
-            map_info, _ = line.split()
-            source, dest = map_info.split("-to-")
-            # special case, first time through
-            if not previous_source:
-                current_source = Source(source)
-                head_source = current_source
-            else:
-                current_source = previous_source.destination
-            next_source = Source(dest)
-            current_source.destination = next_source
-            previous_source = current_source
-        if line[0].isdigit():
-            dest_value, source_value, length = line.split()
-            delta = int(dest_value) - int(source_value)
-            current_source.add_range_map(
-                source_begin=int(source_value),
-                source_len=int(length),
-                dest_delta=delta
-            )
-
-    return seeds, head_source
+def get_concat_time_distance(input_list) -> Tuple[int, int]:
+    time_str = input_list[0].split()
+    distance_str = input_list[1].split()
+    cat_time_str: str = ""
+    cat_distance_str: str = ""
+    for time in time_str:
+        if time.isnumeric():
+            cat_time_str += time
+    for distance in distance_str:
+        if distance.isnumeric():
+            cat_distance_str += distance
+    return int(cat_time_str), int(cat_distance_str)
 
 
-def part1(input_list) -> int:
-    seeds, head_source = get_seeds_and_linked_list(input_list)
-    min_seed_location: int = sys.maxsize
-    for seed_location in seeds:
-        min_seed_location = min(
-            min_seed_location,
-            head_source.get_mapped_location(int(seed_location))
-        )
-    return min_seed_location
+def can_win(time, distance, push_time) -> bool:
+    if push_time == 0:
+        return False
+    remaining_time = time - push_time # 6 seconds
+    travel_dist: int = push_time * remaining_time
+    if travel_dist > distance:
+        return True
+    return False
 
 
-def part2(input_list) -> int:
-    seeds, head_source = get_seeds_and_linked_list(input_list)
-    min_seed_location: int = sys.maxsize
-    seed_ranges: List = []
-    range_start: int = -1
-    for seed in seeds:
-        if range_start == -1:
-            range_start = int(seed)
-        else:
-            seed_ranges.append(range(range_start, range_start + int(seed)))
-            range_start = -1
+def part1(input_list):
+    distances: List[int]
+    record_times, distances = get_distance_time_arrays(input_list)
 
-    print('')
-    new_seed_ranges = head_source.get_mapped_location_ranges(seed_ranges)
-    print(new_seed_ranges)
-    min_seed_location: int = sys.maxsize
-    for seed_range in new_seed_ranges:
-        min_seed_location = min(min_seed_location, seed_range[0])
-    print(min_seed_location)
-    return min_seed_location
+    # iterate over each race
+    can_win_race_total: List[int] = []
+    for i,_ in enumerate(record_times):
+        race_total_wins: int = 0
+        for push_time in range(1, distances[i]):
+            if can_win(push_time=push_time, distance=distances[i], time=record_times[i]):
+                race_total_wins += 1
+        can_win_race_total.append(race_total_wins)
+    return math.prod(can_win_race_total)
+
+
+def part2(input_list):
+    record_time, record_distance = get_concat_time_distance(input_list=input_list)
+    race_total_wins: int = 0
+    for push_time in range(1, record_time):
+        if can_win(push_time=push_time, distance=record_distance, time=record_time):
+            race_total_wins += 1
+    return race_total_wins
