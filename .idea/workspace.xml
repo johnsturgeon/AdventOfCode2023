@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee0e4108-b4ab-47c6-8a0a-63e5ca4b4073" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AdventOfCode2023.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AdventOfCode2023.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day03.py" beforeDir="false" afterPath="$PROJECT_DIR$/day03.py" afterDir="false" />
     </list>
@@ -19,10 +20,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2Zx2vCHWkczSKu6LZ2ImSPzZLWC" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -41,34 +42,37 @@
     "Python tests.Python tests for day01_test.test_sum_of_words.executor": "Run",
     "Python tests.Python tests for day01_test.test_sum_of_words_sample.executor": "Run",
     "Python tests.Python tests for day02_test.test_sum_of_possible_ids.executor": "Run",
+    "Python tests.Python tests for day03_test.test_sum_of_gear_products.executor": "Run",
     "Python tests.Python tests for day03_test.test_sum_of_parts.executor": "Run",
     "Python tests.Python tests for day03_test.test_sum_of_parts_sample.executor": "Run",
+    "Python tests.Python tests for day04_test.test_total_card_value.executor": "Run",
+    "Python tests.Python tests for day04_test.test_total_card_value_sample.executor": "Run",
     "Python tests.Python tests in day02_test.py.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/johnsturgeon/Code/AdventOfCode2023/tests",
+    "last_opened_file_path": "/Users/johnsturgeon/Code/AdventOfCode2023",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tests" />
-      <recent name="$PROJECT_DIR$/tests/data" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/tests/data" />
+      <recent name="$PROJECT_DIR$/tests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for day03_test.test_sum_of_parts">
-    <configuration name="Python tests for day01_test.test_sum_of_words" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for day04_test.test_total_card_value">
+    <configuration name="Python tests for day03_test.test_sum_of_gear_products" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="AdventOfCode2023" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,23 +84,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;day01_test.test_sum_of_words&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for day02_test.test_sum_of_possible_ids" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="AdventOfCode2023" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;day02_test.test_sum_of_possible_ids&quot;" />
+      <option name="_new_target" value="&quot;day03_test.test_sum_of_gear_products&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -132,7 +120,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in day02_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for day04_test.test_total_card_value" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="AdventOfCode2023" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,17 +132,33 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/day02_test.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;day04_test.test_total_card_value&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for day04_test.test_total_card_value_sample" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode2023" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;day04_test.test_total_card_value_sample&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for day04_test.test_total_card_value" />
+        <item itemvalue="Python tests.Python tests for day04_test.test_total_card_value_sample" />
+        <item itemvalue="Python tests.Python tests for day03_test.test_sum_of_gear_products" />
         <item itemvalue="Python tests.Python tests for day03_test.test_sum_of_parts" />
         <item itemvalue="Python tests.Python tests for day03_test.test_sum_of_parts_sample" />
-        <item itemvalue="Python tests.Python tests in day02_test.py" />
-        <item itemvalue="Python tests.Python tests for day02_test.test_sum_of_possible_ids" />
-        <item itemvalue="Python tests.Python tests for day01_test.test_sum_of_words" />
       </list>
     </recent_temporary>
   </component>
@@ -174,6 +178,7 @@
       <option name="presentableId" value="Default" />
       <updated>1703349638024</updated>
       <workItem from="1703349639155" duration="27453000" />
+      <workItem from="1703605761462" duration="12604000" />
     </task>
     <servers />
   </component>
@@ -195,19 +200,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day03.py</url>
-          <line>82</line>
+          <line>131</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day03.py</url>
+          <line>119</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="tests">
-        <watch expression="number" language="Python" />
-        <watch expression="part_number_sum" language="Python" />
+        <watch expression="self" language="Python" />
+        <watch expression="children" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$.coverage" NAME=" Coverage Results" MODIFIED="1703545846310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$.coverage" NAME=" Coverage Results" MODIFIED="1703617046188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>
